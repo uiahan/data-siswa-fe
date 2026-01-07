@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         className={`
           fixed md:static z-50
           w-64
-          bg-white/20 backdrop-blur-xl border-r border-white/30
+          bg-white/10 backdrop-blur-xl border-r border-white/30
           p-6
           transform transition-transform duration-300
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
@@ -40,7 +40,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </Link>
 
           <Link
-            to="/students"
+            to="/jurusan"
             onClick={onClose}
             className="flex items-center gap-2 px-2 py-2 rounded-xl text-white hover:bg-white/30 transition"
           >

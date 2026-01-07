@@ -1,6 +1,28 @@
+import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
+import { authService } from "../services/auth.service";
+
 const Navbar = ({ onMenuClick }) => {
+    const navigate = useNavigate();
+
+    const logoutMutation = useMutation({
+        mutationFn: authService.logout,
+        onSuccess: () => {
+            alert("logout sukses");
+            localStorage.removeItem("token");
+            navigate("/")
+        },
+        onError: () => {
+            alert("logout gagal")
+        },
+    });
+
+    const handleLogout = () => {
+        logoutMutation.mutate();
+    };;
+
   return (
-    <header className="h-16 flex items-center justify-between px-4 md:px-6 bg-white/20 backdrop-blur-xl border-b border-white/30">
+    <header className="h-16 flex items-center justify-between px-4 md:px-6 bg-white/10 backdrop-blur-xl border-b border-white/30">
       
       <div className="flex items-center gap-3">
         <button
@@ -19,7 +41,7 @@ const Navbar = ({ onMenuClick }) => {
         <span className="hidden sm:block text-white/80 text-sm">
           Admin
         </span>
-        <button className="px-3 py-1 rounded-lg bg-white text-indigo-600 text-sm font-medium hover:bg-white/90">
+        <button className="px-3 py-1 rounded-lg bg-white text-indigo-600 text-sm font-medium hover:bg-white/90" onClick={handleLogout}>
           Logout
         </button>
       </div>
