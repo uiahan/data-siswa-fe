@@ -10,6 +10,7 @@ const JurusanPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedJurusan, setSelectedJurusan] = useState(null);
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
+    
     const { data, isLoading, isError } = useQuery({
         queryKey: ["jurusan"],
         queryFn: jurusanService.jurusanGetAll,

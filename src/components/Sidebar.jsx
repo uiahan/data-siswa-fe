@@ -48,7 +48,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </Link>
 
           <Link
-            to="/students/create"
+            to="/kelas"
             onClick={onClose}
             className="flex items-center gap-2 ml-1 px-2 py-2 rounded-xl text-white hover:bg-white/30 transition"
           >
@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           </Link>
 
           <Link
-            to="/students/create"
+            to="/siswa"
             onClick={onClose}
             className="flex items-center gap-2 px-2 py-2 rounded-xl text-white hover:bg-white/30 transition"
           >

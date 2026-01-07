@@ -5,6 +5,8 @@ import DashboardLayout from "../layouts/dashboard.layout";
 import DashboardPage from "../pages/dashboard/dashboard.page";
 import AuthGuard from "./auth-guard";
 import JurusanPage from "../pages/dashboard/jurusan.page";
+import KelasPage from "../pages/dashboard/kelas.page";
+import SiswaPage from "../pages/dashboard/siswa.page";
 
 const AppRoutes = () => {
     return (
@@ -16,6 +18,8 @@ const AppRoutes = () => {
                 <Route element={<DashboardLayout />}>
                     <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/jurusan" element={<JurusanPage />} />
+                    <Route path="/kelas" element={<KelasPage />} />
+                    <Route path="/siswa" element={<SiswaPage />} />
                 </Route>
             </Route>
         </Routes>
